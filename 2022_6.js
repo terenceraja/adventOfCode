@@ -2,13 +2,7 @@ const data = `stftmtvvtvqqczqqnjnwwlqqdzdnnsvnsswbbwsstvvssfjsjbjfjmjpjzpplpppjz
 
 // console.log(data)
 
-let test = "heol";
-
-let slice = test.split("l");
-console.log(slice);
-
-let initial = data.slice(0, 4);
-// console.log(initial + 'yo')
+let binary = [];
 
 let j = 0;
 for (let i = 0; i < data.length; i++) {
@@ -29,6 +23,18 @@ for (let i = 0; i < data.length; i++) {
     }
   }
   console.log(check);
+  const initialValue = 0;
+  const total = check.reduce(
+    (accumulator, currentValue) => accumulator + currentValue,
+    initialValue
+  );
+
+  binary.push(total);
 
   j = j + 1;
 }
+
+console.log(binary);
+
+const found = binary.findIndex((element) => element === 0);
+console.log(found);
